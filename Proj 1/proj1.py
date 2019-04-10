@@ -7,16 +7,16 @@ import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
 
-"""
-1)
-Function that simulates a single roll of a n-sided die. 
-Inputs: The probabilities for each side, given as a vector p = [p_1,p_2,...p_n]
-Outputs:The number on the face of the die after a single roll, 
-i.e. one number from the set of integers {1,2,...n}
-Note: The sum of p must be equal to 1.0, otherwise the probability values
-are incorrect.
-"""
 def nSidedDie(p):
+	"""
+	1)
+	Function that simulates a single roll of a n-sided die. 
+	Inputs: The probabilities for each side, given as a vector p = [p_1,p_2,...p_n]
+	Outputs:The number on the face of the die after a single roll, 
+	i.e. one number from the set of integers {1,2,...n}
+	Note: The sum of p must be equal to 1.0, otherwise the probability values
+	are incorrect.
+	"""
     n = len(p) #Number of elements in 'p'
     
     pSum = 0
@@ -56,13 +56,13 @@ def nSidedDie(p):
         
         return d
 
-"""
-2)
-Number of rolls needed to get a "7" with two dice
-Input: None
-Output: None
-"""
 def numDiceRollsNeeded():
+	"""
+	2)
+	Number of rolls needed to get a "7" with two dice
+	Input: None
+	Output: None
+	"""
     N = 100000 #Number of tests
     
     timesRolled = 0 
@@ -101,14 +101,14 @@ def numDiceRollsNeeded():
     plt.xlabel('Number of Rolls Needed for 7')
     plt.ylabel('Probability')
 
-"""
-3)
-Calculates the probability of success of getting exactly 50 heads after
-tossing 100 coins 100,000 times.
-Input: None
-Output: The probability of success of getting exactly 50 heads
-"""
 def fiftyHeadsPercent():
+	"""
+	3)
+	Calculates the probability of success of getting exactly 50 heads after
+	tossing 100 coins 100,000 times.
+	Input: None
+	Output: The probability of success of getting exactly 50 heads
+	"""
     heads = 0 #Counter for heads
     n = 100 #Number of coins
     N = 100000 #Number of tests
@@ -126,26 +126,26 @@ def fiftyHeadsPercent():
 import random
 import string
 
-"""
-Input: None
-Output: None 
-Function calculates the probability of guessing the correct password in a 
-randomly generated password list of 4 lowercase English characters.
-The print statements are for the probability of 'm' words, 'k*m' words, and
-number of words needed to achieve a p = 0.5 
-"""
 def pwGen():
+	"""
+	Input: None
+	Output: None 
+	Function calculates the probability of guessing the correct password in a 
+	randomly generated password list of 4 lowercase English characters.
+	The print statements are for the probability of 'm' words, 'k*m' words, and
+	number of words needed to achieve a p = 0.5 
+	"""
     return ''.join(random.choice(string.ascii_lowercase) for x in range(4))
 
-"""
-4)
-Input: k, m integers
-Output: probability of hacking password
-Function calculates the probability of guessing the correct password in a 
-randomly generated password list of 4 lowercase English characters.
-The print statements are for the probability of 'm' words, 'k*m' words.
-"""
 def passwordHacking(k, m):
+	"""
+	4)
+	Input: k, m integers
+	Output: probability of hacking password
+	Function calculates the probability of guessing the correct password in a 
+	randomly generated password list of 4 lowercase English characters.
+	The print statements are for the probability of 'm' words, 'k*m' words.
+	"""
     n = 26**4
     N = 1000
     
@@ -161,14 +161,14 @@ def passwordHacking(k, m):
     result = count/N
     return result
 
-"""
-Input: None
-Output: None
-Prints out vital information about the probability of the password
-hacking experiment. Also prints out the words needed to achieve
-p = 0.5 in a list of 'm' passwords.
-"""
 def probPwHack():
+	"""
+	Input: None
+	Output: None
+	Prints out vital information about the probability of the password
+	hacking experiment. Also prints out the words needed to achieve
+	p = 0.5 in a list of 'm' passwords.
+	"""
     k = 7
     m = 80000
     
